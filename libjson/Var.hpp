@@ -75,5 +75,34 @@ namespace json
             return _ptr->equals(*other._ptr);
         }
     };
+
+    inline std::ostream& operator<<(std::ostream& os, Var const& v)
+    {
+        os << *v;
+        return os;
+    }
+
+    inline bool operator==(Var const& lhs, Var const& rhs)
+    {
+        return lhs.equals(rhs);
+    }
+
+    inline bool operator==(Var const& lhs, Data const& rhs)
+    {
+        return (*lhs).equals(rhs);
+    }
+
+    inline bool operator==(Data const& lhs, Var const& rhs)
+    {
+        return lhs.equals(*rhs);
+    }
+
+    inline bool operator!=(Var const& lhs, Var const& rhs)
+    {
+        return !(lhs == rhs);
+    }
 }
+
+
+
 #endif
