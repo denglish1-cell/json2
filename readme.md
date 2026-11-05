@@ -16,4 +16,4 @@ N\A
 
 # Strengths
 
-I think my base class is very well structured.
+I worked really hard on making the code compact.
